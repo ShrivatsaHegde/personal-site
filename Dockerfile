@@ -4,7 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN R -e 'install.packages(c("shiny", "shinydashboard", "Biostrings", "bio3d"))'
+RUN R -e 'install.packages(c("shiny", "shinydashboard"))' && \
+    R -e 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager"); BiocManager::install(c("Biostrings", "bio3d"))'
 
 EXPOSE 3838
 
