@@ -1,0 +1,4 @@
+shiny
+shinydashboard
+Biostrings
+bio3d
